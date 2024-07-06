@@ -1,24 +1,31 @@
-# automatic-number-plate-recognition-python-yolov8
-
-<p align="center">
-<a href="https://www.youtube.com/watch?v=fyJB1t0o0ms">
-    <img width="600" src="https://utils-computervisiondeveloper.s3.amazonaws.com/thumbnails/with_play_button/anpr_yolo2.jpg" alt="Watch the video">
-    </br>Watch on YouTube: Automatic number plate recognition with Python, Yolov8 and EasyOCR !
-</a>
-</p>
-
+# automatic-license-plate-recognition-python-yolov8
 ## data
-
 The video I used in this tutorial can be downloaded [here](https://www.pexels.com/video/traffic-flow-in-the-highway-2103099/).
-
+## libraries:
+Python libraries used include EasyOCR, YOLOv8, and OpenCV.
 ## models
 
 A Yolov8 pretrained model was used to detect vehicles.
 
-A licensed plate detector was used to detect license plates. The model was trained with Yolov8 using [this dataset](https://universe.roboflow.com/roboflow-universe-projects/license-plate-recognition-rxg4e/dataset/4) and following this [step by step tutorial on how to train an object detector with Yolov8 on your custom data](https://github.com/computervisioneng/train-yolov8-custom-dataset-step-by-step-guide). 
+## License plate format:
 
-The trained model is available in my [Patreon](https://www.patreon.com/ComputerVisionEngineer).
+The system is designed to work with a specific license plate format, which is the UK format with seven characters (two letters, two digits, and three letters).
+The system can be adapted to work with other license plate formats.
+Steps:
 
-## dependencies
+Load libraries and video:
 
-The sort module needs to be downloaded from [this repository](https://github.com/abewley/sort) as mentioned in the [video](https://youtu.be/fyJB1t0o0ms?t=1120).
+The first step is to import the necessary libraries and load the video containing the cars.
+Object detection:
+
+YOLOv8 is used to detect cars in the video frames.
+Object tracking:
+
+Once cars are detected, a separate algorithm called SORT is used to track the motion of these cars across the video frames.
+License plate recognition:
+
+EasyOCR is then used to read the license plates from the detected cars.
+Data storage (optional):
+
+The results, including the license plate numbers and car IDs, can be saved to a CSV file for further analysis.
+
